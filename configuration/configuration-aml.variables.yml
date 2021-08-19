@@ -1,0 +1,52 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+# Definition of AML-related environment variables
+# There are two versions: One is for using multiple classifiers.  The other is for using one best classifier.
+
+# If the data scientist has already picked a best classifier, you can change CLASSIFIER_NUMBER to 1 
+#  to use "train_1_classifier.py".  Otherwise, you can change CLASSIFIER_NUMBER to n to 
+#   use "train_n_classifier.py" which will use and compare multiple classifers and will automatically pick up the best one for you.
+
+# You can change the variable names to fit your naming convention.
+
+variables:
+
+  PYTHON_VERSION: 3.7
+  SDK_VERSION: 1.27
+
+  # Input data
+  AML_DATASET: two_class
+  KEEP_COLUMNS: Helpfulness_Score|Score|Text|Target
+  TARGET_COLUMN: Target
+  # The value for the true or positive case should go first!!!
+  TARGET_VALUES: toys games|not a toy/game
+  TEXT_COLUMNS: Text
+  # The number of folds to be used in the cross validation: 1-10
+  FOLD_NUMBER: 4
+  # The number of classifiers to be used in the model training: 1 or n
+  CLASSIFIER_NUMBER: 1
+
+  # Training
+  TRAINING_SCRIPT_NAME: train_$(CLASSIFIER_NUMBER)_classifier.py
+  AML_MODEL_NAME: two_class_$(CLASSIFIER_NUMBER).pkl
+  AML_TRAINING_EXPERIMENT: two-class-$(CLASSIFIER_NUMBER)-experiment
+  AML_TRAINING_PIPELINE: two-class-$(CLASSIFIER_NUMBER)-pipeline
+  AML_TRAINING_COMPUTE: cpucompute
+  AML_TRAINING_ENV_PATH: configuration/environments/environment_training
+  TRAINING_MODEL_METRIC_NAME: Recall
+  TRAINING_MAXIMIZE: True
+
+  # Batch inference
+  AML_BATCHINFERENCE_EXPERIMENT: two-class-$(CLASSIFIER_NUMBER)-bi-experiment
+  AML_BATCHINFERENCE_PIPELINE: two-class-$(CLASSIFIER_NUMBER)-bi-pipeline
+  AML_BATCHINFERENCE_COMPUTE: $(AML_TRAINING_COMPUTE)
+  AML_BATCHINFERENCE_ENV_PATH: configuration/environments/environment_inference
+  BATCHINFERENCE_OUTPUT_DIR: forecasting_results
+  BATCHINFERENCE_OUTPUT_CONTAINER: modelprediction
+
+  # Real-time inference
+  AML_REALTIMEINFERENCE_ENV_PATH: $(AML_BATCHINFERENCE_ENV_PATH)
+  AKS_COMPUTE: aks-compute
+  AML_WEBSERVICE: two-class-$(CLASSIFIER_NUMBER)-webservice
+
