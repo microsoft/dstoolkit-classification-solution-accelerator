@@ -1,0 +1,39 @@
+{
+    "data": [
+        {
+            "WeekStarting": "1990-06-14",
+            "Store": 1000,
+            "Brand": "dominicks",
+            "Advert": 1,
+            "Price": 2.59
+        },
+        {
+            "WeekStarting": "1990-06-21",
+            "Store": 1000,
+            "Brand": "dominicks",
+            "Advert": 1,
+            "Price": 2.39
+        },
+        {
+            "WeekStarting": "1990-06-28",
+            "Store": 1000,
+            "Brand": "dominicks",
+            "Advert": 1,
+            "Price": 2.48
+        },
+        {
+            "WeekStarting": "1990-07-05",
+            "Store": 1000,
+            "Brand": "dominicks",
+            "Advert": 1,
+            "Price": 2.33
+        },
+        {
+            "WeekStarting": "1990-07-12",
+            "Store": 1000,
+            "Brand": "dominicks",
+            "Advert": 1,
+            "Price": 2.01
+        }
+    ]
+}
