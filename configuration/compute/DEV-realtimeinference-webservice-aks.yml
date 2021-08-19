@@ -1,0 +1,6 @@
+COMPUTE_TYPE: AksWebservice
+COMPUTE_CONFIG:
+# Parameters as passed to AksServiceDeploymentConfiguration constructor
+# See: https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aks.aksservicedeploymentconfiguration
+  cpu_cores: 1
+  memory_gb: 1
