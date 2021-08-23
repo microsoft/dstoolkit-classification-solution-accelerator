@@ -19,7 +19,7 @@ In order to successfully complete your solution, you will need to have access to
 Getting Started
 ================================================================================================================================
 
-If you want to deploy one of the use cases provided in the forks, have a look at how to setup your environment in your own Azure DevOps Organisation in  **[end-to-end setup documentation](https://dev.azure.com/DAISolutions/End-to-End%20Machine%20Learning/_git/Classification?path=%2Fdocs%2Fhow-to%2FEndToEndSetup.md&version=GBmain)**.
+If you want to deploy one of the use cases provided in the forks, have a look at how to setup your environment in your own Azure DevOps Organisation in  **[end-to-end setup documentation](https://github.com/microsoft/dstoolkit-classification-solution-accelerator/blob/main/docs/how-to/EndToEndSetup.md)**.
 
 The steps you will need to follow are:
 
@@ -37,7 +37,7 @@ The steps you will need to follow are:
 
 If you have managed to run the entire example, well done! You can now adapt the same code to your own use case with the exact same infrastructure and CI/CD pipeline. To do so, follow these steps:
 
--   Add your variables (model and dataset name, azure environment, ...) in [configuration-aml.variables.yaml](https://dev.azure.com/DAISolutions/End-to-End%20Machine%20Learning/_git/Classification?path=%2Fconfiguration%2Fconfiguration-aml.variables.yml&version=GBmain) in the *configuration folder*
+-   Add your variables (model and dataset name, azure environment, ...) in [configuration-aml.variables.yaml](https://github.com/microsoft/dstoolkit-classification-solution-accelerator/blob/main/configuration/configuration-aml.variables.yml) in the *configuration folder*
 
 -   Add your core ML code (feature engineering, training, scoring, etc) in **./src**. We provide the structure of the core scripts. You can fill the core scripts with your own functions. For examle, if your data scientist has already finished model training task and picked a best algorithm or classifier, you can use "train_1_classifier.py" to train your model against the input data. Otherwise, you can use "train_n_classifier.py" to train your model with multiple classifiers (it can take up to 2-3 hours). The code will pick up the best performing classifier automatically based on a model metric name which you can specify in the configuration file.
 
@@ -48,7 +48,7 @@ The project folders are structured in a way to rapidly move from a notebook expe
 General Coding Guidelines
 ====================================================================================================================================================
 
-For more details on the coding guidelines and explanation on the folder structure, please go to [data/docs/how-to](https://dev.azure.com/DAISolutions/End-to-End%20Machine%20Learning/_git/Classification?path=%2Fdocs%2Fhow-to%2FTemplateDocumentation.md&version=GBmain).
+For more details on the coding guidelines and explanation on the folder structure, please go to [data/docs/how-to](https://github.com/microsoft/dstoolkit-classification-solution-accelerator/blob/main/docs/how-to/GettingStarted.md).
 
 1.  Core scripts should receive parameters/config variables only via code arguments and must not contain any hardcoded variables in the code (like dataset names, model names, input/output path, ...). If you want to provide constant variables in those scripts, write default values in the argument parser.
 
