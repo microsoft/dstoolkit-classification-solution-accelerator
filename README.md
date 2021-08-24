@@ -19,7 +19,7 @@ In order to successfully complete your solution, you will need to have access to
 Getting Started
 ================================================================================================================================
 
-If you want to deploy one of the use cases provided in the forks, have a look at how to setup your environment in your own Azure DevOps Organisation in  **[end-to-end setup documentation](https://github.com/microsoft/dstoolkit-classification-solution-accelerator/blob/main/docs/how-to/EndToEndSetup.md)**.
+If you want to deploy one of the use cases provided in the forks, have a look at how to setup your environment in  **[end-to-end setup documentation](https://github.com/microsoft/dstoolkit-classification-solution-accelerator/blob/main/docs/how-to/EndToEndSetup.md)**.
 
 The steps you will need to follow are:
 
