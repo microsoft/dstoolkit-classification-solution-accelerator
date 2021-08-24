@@ -5,6 +5,22 @@ About this repository
 
 This repository contains the basic repository structure for delivering classification solutions for machine learning (ML) projects based on Azure technologies (Azure ML and Azure DevOps).
 
+Binary classification models are perhaps the most common use-case in predictive analytics. The reason is that many key client actions across a wide range of industries are binary in nature, such as:
+
+-   defaulting on a loan,
+-   clicking on an ad,
+-   terminating a subscription,
+-   quality control of products, processes or services,
+-   medical testing,and so on.
+
+Because of this broad commonality, this accelerator will prove optimal in many data science-based engagements, streamlining time to value.
+
+Details of the accelerator
+============================================================================================================================
+Leverages the ML Ops accelerator to provide a configurable and re-usable solution accelerator for binary classification cases.
+Auto selects the best classification algorithm for the dataset based on user defined criteria (parameters).
+Uses Azure ML and Azure Dev Ops
+
 The folder names and files are chosen based on personal experience. You can find the principles and ideas behind the structure, which we recommend to follow when customizing your own classification project and MLOps process. Also, we expect users to be familiar with AML concepts and how to use the Azure technology.
 
 Prerequisites
