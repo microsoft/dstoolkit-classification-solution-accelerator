@@ -29,7 +29,7 @@ The steps you will need to follow are:
 
     -   if you are starting with MLOps, you will find the necessary Azure Devops pipelines and ARM templates in the folder *infrastructure* to setup the recommended infrastructure.
 
-    -   if you already have a preferred architecture and Azure resources, you can delete the infrastructure folder. In the [end-to-end setup documentation](https://dev.azure.com/DAISolutions/End-to-End%20Machine%20Learning/_git/Classification?path=%2Fdocs%2Fhow-to%2FEndToEndSetup.md&version=GBmain), you will find a FAQ section with steps to follow to adapt the code to your infrastructure.
+    -   if you already have a preferred architecture and Azure resources, you can delete the infrastructure folder. In the [end-to-end setup documentation](https://github.com/microsoft/dstoolkit-classification-solution-accelerator/blob/main/docs/how-to/EndToEndSetup.md), you will find a FAQ section with steps to follow to adapt the code to your infrastructure.
 
 2.  Creating your registered dataset to Azure Machine Learning studio. In the folder **./docs/data** you will find the sample CSV file and the instruction file to setup your registered dataset in Azure Machine Learning (AML) studio.
 
