@@ -15,13 +15,14 @@ Binary classification models are perhaps the most common use-case in predictive 
 
 Because of this broad commonality, this accelerator will prove optimal in many data science-based engagements, streamlining time to value.
 
+The folder names and files are chosen based on personal experience. You can find the principles and ideas behind the structure, which we recommend to follow when customizing your own classification project and MLOps process. Also, we expect users to be familiar with AML concepts and how to use the Azure technology.
+
 Details of the accelerator
 ============================================================================================================================
-Leverages the ML Ops accelerator to provide a configurable and re-usable solution accelerator for binary classification cases.
-Auto selects the best classification algorithm for the dataset based on user defined criteria (parameters).
-Uses Azure ML and Azure Dev Ops
+-   Leverages the ML Ops accelerator to provide a configurable and re-usable solution accelerator for binary classification cases.
+-   Auto selects the best classification algorithm for the dataset based on user defined criteria (parameters).
+-   Uses Azure ML and Azure Dev Ops
 
-The folder names and files are chosen based on personal experience. You can find the principles and ideas behind the structure, which we recommend to follow when customizing your own classification project and MLOps process. Also, we expect users to be familiar with AML concepts and how to use the Azure technology.
 
 Prerequisites
 ============================================================================================================================
