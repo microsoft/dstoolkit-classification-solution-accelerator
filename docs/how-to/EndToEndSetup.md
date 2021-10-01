@@ -57,15 +57,13 @@ The Azure pipeline will create a DEV and PROD resource group, with all the AML a
 If you have managed to generate the infrastructure, you now have to add the final configurations to be able to run the CI/CD Pipeline. To do so:
 
 1. Add the AML extension to your Azure DevOps. This will enable Azure DevOps to run your AML pipelines.
-   1. Go to the marketplace and click on _browse marketplace_ <br>
-   <img src="../media/marketplace.PNG" alt="marketplace" width="500"/>
-   2. Search for Azure Machine learning. Here the direct link: <https://marketplace.visualstudio.com/items?itemName=ms-air-aiagility.vss-services-azureml>
+   1. Go to the marketplace and click on _browse marketplace_ <br> <img src="../media/marketplace.PNG" alt="marketplace" width="500"/>
+   2. Search for Azure Machine learning. Here is [the direct link](https://marketplace.visualstudio.com/items?itemName=ms-air-aiagility.vss-services-azureml)
    3. Click on _Get it free_
-   4. Select your Azure DevOps Organisation <br> 
-   <img src="../media/devops-organisation.PNG" alt="devops-org" width="500"/>
+   4. Select your Azure DevOps Organisation <br> <img src="../media/devops-organisation.PNG" alt="devops-org" width="500"/>
 
 2. Create a service connection to your DEV and PRD AML service:
-   1. Go back to your project settings.
+   1. Go back to your project settings. 
    2. Create a new service connection but this time choose _Machine Learning Workspace_ 
     <img src="../media/service-connection-aml.PNG" alt="service-connection-aml" width="250"/>
 
