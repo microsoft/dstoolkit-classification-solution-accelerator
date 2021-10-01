@@ -4,17 +4,19 @@ This page describes how to reuse the template in your own project. The setup con
 
 We also provide an FAQ section to support you in fine-tuning the template to your requirements
 
-[[_TOC_]]
 
 ## Configuring your Azure Devops
 
 Create a service connection to your Azure subscription. This will enable the Azure pipelines to create the infrastructure and to send the code to your AML services. To do so, go to:
 
-1. Project settings and click on Service Connection <br> ![service-connection](../media/service-connection.PNG  =250x)
+1. Project settings and click on Service Connection <br> 
+<img src="../media/service-connection.PNG" alt="service-connection" width="250"/>
+
 
 2. Click on _New service connection_, _Azure Resource Manager_, then _Next_
 
-3. Click on _Service Principal (automatic)_, then _next_. Now, you should be here: <br> ![new-service-connection](../media/new_connection.png =250x)
+3. Click on _Service Principal (automatic)_, then _next_. Now, you should be here: <br> 
+<img src="../media/new_connection.png" alt="new-service-connection" width="250"/>
 
 4. Select your subscription where you want to deploy your resources. Leave **Resource group blank (!)**.  Add the name of your service connection. By default, in the configuration file, we use _conn-mlops-sub-infra_. Click on **Grant access permission to all pipelines (!)**
 
@@ -32,14 +34,21 @@ Finally, create a *_develop_ branch* and push the same code to your new branch. 
 
 If you have followed the steps before, you can now create your infrastructure automatically. To do so, in your Azure DevOps Project:
 
-1. Go to _Pipelines_ and click on _New Pipeline_ <br> ![create-new-pipeline](../media/create-new-pipeline.PNG)
-   
-2. Click on _Azure Repos Git_ <br> ![git-repo](../../docs/media/build-connect.png =500x)
+1. Go to _Pipelines_ and click on _New Pipeline_ <br>
+<img src="../media/create-new-pipeline.PNG" alt="create-new-pipeline" />
+
+
+2. Click on _Azure Repos Git_ <br> 
+<img src="../../docs/media/build-connect.png" alt="git-repo" width="500"/>
+
 3. Select the repository where you have pushed your code.
-4. Select _Existing Azure Pipelines YAML file_ <br> ![pipeline](../media/select-iac-pipeline.png =500x)
+4. Select _Existing Azure Pipelines YAML file_ <br>
+<img src="../media/select-iac-pipeline.png" alt="pipeline" width="500"/>
+
 5. In _Branch_ select *_develop_*, In _Path_, select _azure_pipelines/PIPELINE-0-Setup.yml_
 6. Click on continue and click on run
-7. (Optional) if you also want to create a PRD environment, you can run the same pipeline as before. Go to pipelines, select the pipeline you just run, and then click on _run pipeline_. In the pop up window, select 'main' in _Branch_ <br> ![new-prod-pipeline](../media/create-new-pipeline-prd.PNG =500x)
+7. (Optional) if you also want to create a PRD environment, you can run the same pipeline as before. Go to pipelines, select the pipeline you just run, and then click on _run pipeline_. In the pop up window, select 'main' in _Branch_ <br> 
+<img src="../media/create-new-pipeline-prd.PNG" alt="new-prod-pipeline" width="500"/>
 
 The Azure pipeline will create a DEV and PROD resource group, with all the AML artifacts (keyvault, blobstorage, etc). Also, the pipeline will create some compute targets and AKS to use for respectively model training and model deployment. All the resources and compute targets can be customized (what to deploy, where, etc) once you have a good understanding of _PIPELINE-0-Setup.yml_.
 
@@ -48,15 +57,18 @@ The Azure pipeline will create a DEV and PROD resource group, with all the AML a
 If you have managed to generate the infrastructure, you now have to add the final configurations to be able to run the CI/CD Pipeline. To do so:
 
 1. Add the AML extension to your Azure DevOps. This will enable Azure DevOps to run your AML pipelines.
-   1. Go to the marketplace and click on _browse marketplace_ <br> ![marketplace](../media/marketplace.PNG =500x)
+   1. Go to the marketplace and click on _browse marketplace_ <br>
+   <img src="../media/marketplace.PNG" alt="marketplace" width="500"/>
    2. Search for Azure Machine learning. Here the direct link: <https://marketplace.visualstudio.com/items?itemName=ms-air-aiagility.vss-services-azureml>
    3. Click on _Get it free_
-   4. Select your Azure DevOps Organisation <br> ![devops-org](../media/devops-organisation.PNG =500x)
-
+   4. Select your Azure DevOps Organisation <br> 
+   <img src="../media/devops-organisation.PNG" alt="devops-org" width="500"/>
 
 2. Create a service connection to your DEV and PRD AML service:
    1. Go back to your project settings.
-   2. Create a new service connection but this time choose _Machine Learning Workspace_ ![service-connection-aml](../media/service-connection-aml.PNG =250x)
+   2. Create a new service connection but this time choose _Machine Learning Workspace_ 
+    <img src="../media/service-connection-aml.PNG" alt="service-connection-aml" width="250"/>
+
    3. Use the same subscription where you deployed you infrastructure, select the resource group that was created for you infrastructure (by default it should be **rg-mlops-dev-001**)
  
 3. Train a model and deploy the model. As you did in **Creating the infrastructure**, follow the step to create a new Azure pipeline. This time, in _branch_ select *develop* and for _Path_, select _azure_pipelines/PIPELINE-1-modelling.yml_.
