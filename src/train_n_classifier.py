@@ -176,7 +176,7 @@ def parse_args(args_list=None):
     parser.add_argument('--model-name', type=str, default='two_class.pkl')
     parser.add_argument('--model-metric-name', type=str, default='Recall',
                         help='The name of the evaluation metric used in Train step')
-    parser.add_argument('--keep-columns', type=str, default='Helpfulness Score|Score|Text|Target')
+    parser.add_argument('--keep-columns', type=str, default='Helpfulness_Score|Score|Text|Target')
     parser.add_argument('--target-column', type=str, default='Target')
     parser.add_argument('--target-values', type=str, default='toys games|not a toy/game')
     parser.add_argument('--text-columns', type=str, default='Text')
